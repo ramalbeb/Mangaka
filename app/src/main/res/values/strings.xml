@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Mangaka</string>
+    <string name="clear_history">Clear History</string>
+    <string name="display">Display</string>
+    <string name="sort">Sort</string>
+    <string name="filter">Filter</string>
+    <string name="search">Search</string>
+    <string name="toggle_mode">Toggle Mode</string>
+    <string name="Search" />
+    <string name="library">Library</string>
+    <string name="updates">Updates</string>
+    <string name="history">History</string>
+    <string name="browse">Browse</string>
+    <string name="more">More</string>
+</resources>

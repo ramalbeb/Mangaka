@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/libraryFragment">
+
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.mangaka.app.ui.library.LibraryFragment"
+        android:label="Library" />
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.mangaka.app.ui.history.HistoryFragment"
+        android:label="History">
+
+        <action
+            android:id="@+id/action_historyFragment_to_readerFragment"
+            app:destination="@id/readerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.mangaka.app.ui.search.SearchFragment"
+        android:label="Search" >
+
+    <action
+        android:id="@+id/action_searchFragment_to_mangaDetailsFragment"
+        app:destination="@id/mangaDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sourcesFragment"
+        android:name="com.mangaka.app.ui.sources.SourcesFragment"
+        android:label="Sources">
+
+        <action
+            android:id="@+id/action_sourcesFragment_to_browseFragment"
+            app:destination="@id/browseFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/browseFragment"
+        android:name="com.mangaka.app.ui.sources.BrowseFragment"
+        android:label="Browse">
+
+        <argument
+            android:name="sourceId"
+            app:argType="long" />
+
+        <action
+            android:id="@+id/action_browseFragment_to_mangaDetailsFragment"
+            app:destination="@id/mangaDetailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/readerFragment"
+        android:name="com.mangaka.app.ui.reader.ReaderFragment"
+        android:label="Reader">
+
+        <argument
+            android:name="sourceId"
+            app:argType="long" />
+
+        <argument
+            android:name="chapterUrl"
+            app:argType="string" />
+
+        <argument
+            android:name="chapterTitle"
+            app:argType="string" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/mangaDetailsFragment"
+        android:name="com.mangaka.app.ui.details.MangaDetailsFragment"
+        android:label="Manga Details">
+
+        <argument
+            android:name="sourceId"
+            app:argType="long" />
+
+        <argument
+            android:name="mangaUrl"
+            app:argType="string" />
+
+        <argument
+            android:name="mangaTitle"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_mangaDetailsFragment_to_readerFragment"
+            app:destination="@id/readerFragment" />
+    </fragment>
+
+
+
+</navigation>

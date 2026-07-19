@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main app UI -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:tag="nav_host_fragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <!-- Hidden WebView container (Must be VISIBLE for some devices to load) -->
+    <FrameLayout
+        android:id="@+id/hidden_webview_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationX="9999dp"
+        android:visibility="visible" />
+
+    <!-- Full-screen WebView overlay (initially hidden) -->
+    <FrameLayout
+        android:id="@+id/fullscreen_webview_container"
+        android:hardwareAccelerated="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:elevation="999dp"
+        android:translationZ="999dp" />
+
+</FrameLayout>
